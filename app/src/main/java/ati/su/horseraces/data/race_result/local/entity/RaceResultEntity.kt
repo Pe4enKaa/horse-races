@@ -1,5 +1,6 @@
-package ati.su.horseraces.data.race.local.entity
+package ati.su.horseraces.data.race_result.local.entity
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.time.LocalDateTime
@@ -8,6 +9,8 @@ import java.time.LocalDateTime
 data class RaceResultEntity(
     @PrimaryKey
     val id: String,
-    val winnerHorseId: String,
+    @Embedded
+    val raceConditions: RaceConditionsEmbedded,
+    val timeStartRace: LocalDateTime,
     val timeCompleteRace: LocalDateTime
 )

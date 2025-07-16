@@ -1,12 +1,14 @@
 package ati.su.horseraces.domain.race.repository
 
-import ati.su.horseraces.data.race.local.entity.RaceResultEntity
+import ati.su.horseraces.data.race_result.local.entity.RaceResultEntity
 import ati.su.horseraces.domain.common.core.DataState
+import ati.su.horseraces.domain.race.model.RaceResult
+import ati.su.horseraces.domain.race.model.RaceResultWithParticipants
 import kotlinx.coroutines.flow.Flow
 
 interface RaceRepository {
 
-    fun saveRaceResult(raceResultEntity: RaceResultEntity): Flow<DataState<Unit>>
+    fun saveRaceResult(raceResult: RaceResult): Flow<DataState<Unit>>
 
-    fun getRaceHistory(): Flow<DataState<List<RaceResultEntity>>>
+    fun selectRaceHistory(): Flow<DataState<List<RaceResult>>>
 }

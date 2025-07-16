@@ -1,10 +1,10 @@
-package ati.su.horseraces.data.race
+package ati.su.horseraces.data.race_result
 
 import ati.su.horseraces.data.common.database.HorseRacesAppDatabase
 import ati.su.horseraces.data.common.module.CoroutineDispatchersModule
 import ati.su.horseraces.data.common.module.DatabaseModule
-import ati.su.horseraces.data.race.local.dao.RaceDao
-import ati.su.horseraces.data.race.repository.RaceRepositoryImpl
+import ati.su.horseraces.data.race_result.local.dao.RaceDao
+import ati.su.horseraces.data.race_result.repository.RaceRepositoryImpl
 import ati.su.horseraces.domain.common.utils.DispatcherIO
 import ati.su.horseraces.domain.race.repository.RaceRepository
 import dagger.Module

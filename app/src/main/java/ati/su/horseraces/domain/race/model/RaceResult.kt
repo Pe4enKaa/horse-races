@@ -5,8 +5,11 @@ import java.time.LocalDateTime
 
 data class RaceResult(
     val id: String,
-    val winnerHorse: HorseEnum,
-    val participants: List<RaceParticipant>,
+    val participantsResults: List<RaceParticipant>,
     val raceConditions: RaceConditions,
-    val timestamp: LocalDateTime
-)
+    val timeStartRace: LocalDateTime,
+    val timeCompleteRace: LocalDateTime
+) {
+    val winnerHorseEnum: HorseEnum?
+        get() = participantsResults.firstOrNull { it.finalPosition == 1 }?.horse
+}

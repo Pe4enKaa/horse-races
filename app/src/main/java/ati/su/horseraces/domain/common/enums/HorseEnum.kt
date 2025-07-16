@@ -9,7 +9,6 @@ enum class HorseEnum(
     val stamina: HorseStamina,
     val genetics: GeneticsInfluence
 ) : DisplayableEnum {
-    // Define your specific horse types here
     LIGHTNING_BOLT(
         id = 1,
         displayName = "Молниеносный",
@@ -64,8 +63,6 @@ enum class HorseEnum(
         stamina = HorseStamina.LOW,
         genetics = GeneticsInfluence.NORMAL
     );
-
-    // Companion object for utility functions to get enum by ID or name
     companion object {
         private val idMap = HorseEnum.entries.associateBy { it.id }
         private val nameMap = HorseEnum.entries.associateBy { it.displayName.lowercase() }
