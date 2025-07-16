@@ -6,7 +6,6 @@ import ati.su.horseraces.domain.common.core.DataState
 import ati.su.horseraces.domain.common.core.ProgressBarState
 import ati.su.horseraces.domain.common.utils.DispatcherIO
 import ati.su.horseraces.domain.common.utils.handleLocalException
-import ati.su.horseraces.domain.race.model.Horse
 import ati.su.horseraces.domain.race.repository.RaceRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
