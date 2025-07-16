@@ -11,5 +11,5 @@ data class RaceResult(
     val timeCompleteRace: LocalDateTime
 ) {
     val winnerHorseEnum: HorseEnum?
-        get() = participantsResults.firstOrNull { it.finalPosition == 1 }?.horse
+        get() = participantsResults.firstOrNull { it.finalPosition == 1 }?.horseEnum
 }

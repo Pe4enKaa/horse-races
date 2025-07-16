@@ -42,26 +42,33 @@ object RaceMapper {
     }
 
     private fun mapToDomain(entity: RaceParticipantEntity): RaceParticipant {
-        val horseEnum = HorseEnum.fromId(entity.horseEnumId) ?: error("HorseEnum not found for ID: ${entity.horseEnumId}")
+        val horseEnum = HorseEnum.fromId(entity.horseEnumId)
+            ?: error("HorseEnum not found for ID: ${entity.horseEnumId}")
         return RaceParticipant(
-            horse = horseEnum,
+            horseEnum = horseEnum,
+            initialSpeed = horseEnum.baseSpeed.toDouble(),
+            currentSpeed = horseEnum.baseSpeed.toDouble(),
+            distanceCovered = 0.0,
             finishTimeMs = entity.finishTimeMs,
-            finalPosition = entity.finalPosition
+            finalPosition = entity.finalPosition,
+            currentProgress = 0f
         )
     }
 
     private fun mapToEntity(domain: RaceParticipant, raceId: String): RaceParticipantEntity {
         return RaceParticipantEntity(
             raceId = raceId,
-            horseEnumId = domain.horse.id,
+            horseEnumId = domain.horseEnum.id,
             finishTimeMs = domain.finishTimeMs,
             finalPosition = domain.finalPosition
         )
     }
 
     private fun mapToDomain(embedded: RaceConditionsEmbedded): RaceConditions {
-        val weather = WeatherCondition.fromId(embedded.weatherCondition) ?: error("WeatherCondition not found for ID: ${embedded.weatherCondition}")
-        val track = TrackCondition.fromId(embedded.trackCondition) ?: error("TrackCondition not found for ID: ${embedded.trackCondition}")
+        val weather = WeatherCondition.fromId(embedded.weatherCondition)
+            ?: error("WeatherCondition not found for ID: ${embedded.weatherCondition}")
+        val track = TrackCondition.fromId(embedded.trackCondition)
+            ?: error("TrackCondition not found for ID: ${embedded.trackCondition}")
         return RaceConditions(
             weatherCondition = weather,
             trackCondition = track,
