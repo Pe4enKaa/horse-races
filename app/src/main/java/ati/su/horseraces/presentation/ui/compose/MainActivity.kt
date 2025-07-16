@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import ati.su.horseraces.presentation.ui.compose.main.MainNav
 import ati.su.horseraces.presentation.ui.navigation.AppNavigation
 import ati.su.horseraces.presentation.ui.theme.HorseRacesTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,14 +24,14 @@ class MainActivity: ComponentActivity() {
                 Box(modifier = Modifier.fillMaxSize()) {
                     NavHost(
                         navController = navigator,
-                        startDestination = AppNavigation.Splash,
+                        startDestination = AppNavigation.Main,
                         modifier = Modifier.fillMaxSize(),
                     ) {
                         composable<AppNavigation.Splash> {
-
+                            //TODO: для сплэш экрана
                         }
                         composable<AppNavigation.Main> {
-
+                            MainNav()
                         }
                     }
                 }

@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "ati.su.horseraces"
-        minSdk = 31
+        minSdk = 29
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -72,6 +72,8 @@ dependencies {
     ksp(libs.androidx.room.compiler)
 
     implementation(libs.gson)
+
+    implementation(libs.accompanist.systemuicontroller)
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
