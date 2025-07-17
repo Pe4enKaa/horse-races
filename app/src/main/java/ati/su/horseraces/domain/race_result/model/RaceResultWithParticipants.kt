@@ -1,4 +1,4 @@
-package ati.su.horseraces.domain.race.model
+package ati.su.horseraces.domain.race_result.model
 
 import androidx.room.Embedded
 import androidx.room.Relation

@@ -7,11 +7,11 @@ import androidx.room.Query
 import androidx.room.Transaction
 import ati.su.horseraces.data.race_result.local.entity.RaceParticipantEntity
 import ati.su.horseraces.data.race_result.local.entity.RaceResultEntity
-import ati.su.horseraces.domain.race.model.RaceResultWithParticipants
+import ati.su.horseraces.domain.race_result.model.RaceResultWithParticipants
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface RaceDao {
+interface RaceResultDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertRaceResult(raceResultEntity: RaceResultEntity): Unit
 

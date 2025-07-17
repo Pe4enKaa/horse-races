@@ -1,6 +1,8 @@
-package ati.su.horseraces.domain.race.model
+package ati.su.horseraces.domain.race_result.model
 
 import ati.su.horseraces.domain.common.enums.HorseEnum
+import ati.su.horseraces.domain.race.model.RaceConditions
+import ati.su.horseraces.domain.race.model.RaceParticipant
 import java.time.LocalDateTime
 
 data class RaceResult(

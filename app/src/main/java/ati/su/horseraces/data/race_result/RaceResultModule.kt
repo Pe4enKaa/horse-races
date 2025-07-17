@@ -3,10 +3,10 @@ package ati.su.horseraces.data.race_result
 import ati.su.horseraces.data.common.database.HorseRacesAppDatabase
 import ati.su.horseraces.data.common.module.CoroutineDispatchersModule
 import ati.su.horseraces.data.common.module.DatabaseModule
-import ati.su.horseraces.data.race_result.local.dao.RaceDao
-import ati.su.horseraces.data.race_result.repository.RaceRepositoryImpl
+import ati.su.horseraces.data.race_result.local.dao.RaceResultDao
+import ati.su.horseraces.data.race_result.repository.RaceResultResultRepositoryImpl
 import ati.su.horseraces.domain.common.utils.DispatcherIO
-import ati.su.horseraces.domain.race.repository.RaceRepository
+import ati.su.horseraces.domain.race_result.repository.RaceResultRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,15 +16,15 @@ import javax.inject.Singleton
 
 @Module(includes = [DatabaseModule::class, CoroutineDispatchersModule::class])
 @InstallIn(SingletonComponent::class)
-class RaceModule {
+class RaceResultModule {
     @Singleton
     @Provides
-    fun provideRaceDao(database: HorseRacesAppDatabase): RaceDao = database.raceDao()
+    fun provideRaceDao(database: HorseRacesAppDatabase): RaceResultDao = database.raceDao()
 
     @Singleton
     @Provides
     fun provideRaceRepository(
-        raceDao: RaceDao,
+        raceResultDao: RaceResultDao,
         @DispatcherIO ioDispatcher: CoroutineDispatcher
-    ): RaceRepository = RaceRepositoryImpl(raceDao, ioDispatcher)
+    ): RaceResultRepository = RaceResultResultRepositoryImpl(raceResultDao, ioDispatcher)
 }

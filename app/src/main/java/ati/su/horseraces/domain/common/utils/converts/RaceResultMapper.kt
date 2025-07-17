@@ -1,4 +1,4 @@
-package ati.su.horseraces.data.race_result.repository
+package ati.su.horseraces.domain.common.utils.converts
 
 import ati.su.horseraces.data.race_result.local.entity.RaceConditionsEmbedded
 import ati.su.horseraces.data.race_result.local.entity.RaceParticipantEntity
@@ -8,10 +8,10 @@ import ati.su.horseraces.domain.common.enums.TrackCondition
 import ati.su.horseraces.domain.common.enums.WeatherCondition
 import ati.su.horseraces.domain.race.model.RaceConditions
 import ati.su.horseraces.domain.race.model.RaceParticipant
-import ati.su.horseraces.domain.race.model.RaceResult
-import ati.su.horseraces.domain.race.model.RaceResultWithParticipants
+import ati.su.horseraces.domain.race_result.model.RaceResult
+import ati.su.horseraces.domain.race_result.model.RaceResultWithParticipants
 
-object RaceMapper {
+object RaceResultMapper {
     fun mapToDomain(pojo: RaceResultWithParticipants): RaceResult {
         val participantsResults = pojo.participants.map { mapToDomain(it) }
         val raceConditions = mapToDomain(pojo.raceResult.raceConditions)

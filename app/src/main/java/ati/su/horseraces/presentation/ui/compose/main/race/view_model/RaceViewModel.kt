@@ -5,13 +5,13 @@ import ati.su.horseraces.domain.common.core.BaseViewModel
 import ati.su.horseraces.domain.common.core.DataState
 import ati.su.horseraces.domain.common.core.UIComponent
 import ati.su.horseraces.domain.race.model.RaceConditions
-import ati.su.horseraces.domain.race.model.RaceResult
+import ati.su.horseraces.domain.race_result.model.RaceResult
 import ati.su.horseraces.domain.race.model.UiRaceConditions
 import ati.su.horseraces.domain.race.model.UiRaceParticipant
 import ati.su.horseraces.domain.race.model.UiRaceResult
 import ati.su.horseraces.domain.race.usecase.GenerateRaceConditionsUseCase
 import ati.su.horseraces.domain.race.usecase.GenerateRandomHorsesUseCase
-import ati.su.horseraces.domain.race.usecase.SaveRaceResultUseCase
+import ati.su.horseraces.domain.race_result.usecase.SaveRaceResultUseCase
 import ati.su.horseraces.domain.race.usecase.SimulateRaceUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
